@@ -1,0 +1,10 @@
+torch 
+torchvision
+peft
+pillow
+numpy
+timm==0.4.5
+opencv-python
+scipy
+pycocotools
+natsort

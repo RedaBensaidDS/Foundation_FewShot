@@ -1,0 +1,49 @@
+#MODEL:
+num_classes: 2
+ignore_value: 255
+
+#OPTIM:
+epochs: 200
+lr: 0.001
+momentum: 0.9
+weight_decay: 0.0001
+bn_weight_decay: False
+bn_precise_stats: False
+bn_precise_num_samples: 600
+lr_scheduler: poly
+poly_power: 0.9
+warmup_iters: 10
+warmup_factor: 0.1
+
+#TRAIN:
+mixed_precision: False
+run: 1
+RNG_seed: 0
+loss_type: cross_entropy
+exclude_classes: []
+
+#dataset
+dataset_name: ppdls
+batch_size: 2
+train_min_size: 400
+train_max_size: 1600
+train_crop_size: [1024,1024]
+val_input_size: [1024,1024]
+val_label_size: [1024, 1024]
+aug_mode: randaug_reduced
+num_workers: 6
+class_uniform_pct: 0.5
+train_split: train
+val_split: validation
+max_eval: 600
+eval_print_every: 10000
+train_print_every: 10000
+
+#checkpoint
+eval_every_k_epochs: 10
+eval_last_k_epochs: 3
+save_dir: /scratch/models_ppdls
+split_path : /scratch/CVPPP2017_LCC_training/split.pkl
+dataset_dir : /scratch/CVPPP2017_LCC_training/CVPPP2017_LCC_training/training/
+model_repo_path : /scratch/
+model_path : /scratch/models/
